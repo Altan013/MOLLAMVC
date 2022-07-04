@@ -1,0 +1,114 @@
+﻿@model List<Order>
+@{ ViewData["Title"] = "Index"; }
+
+
+<div class="col-md-12 top-20 padding-0">
+    <div class="col-md-12">
+        <div class="panel">
+            <div class="panel-heading"><h3>Order Tables</h3></div>
+            <div class="panel-body">
+                <div class="responsive-table">
+                    <table class="mt-3 table table-dark">
+                        <thead>
+                            <tr>
+                                <th>
+                                    #
+                                </th>
+                                <th>
+                                    Username
+                                </th>
+                                <th>
+                                    Date
+                                </th>
+                                <th>
+                                    Country
+                                </th>
+                                <th>
+                                    City
+                                </th>
+                                <th>
+                                    Total Price
+                                </th>
+                                <th>
+                                    Status
+                                </th>
+
+                                <th>
+                                    Settings
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var order in Model)
+                            {
+                            <tr>
+                             <td>
+                        @order.Id
+                    </td>
+                    <td>
+                        @order.AppUser.UserName
+                    </td>
+                    <td>
+                        @order.Date.ToString("HH:mm dd MMMM yyyy")
+                    </td>
+                    <td>
+                        @order.Country
+                    </td>
+                    <td>
+                        @order.City
+                    </td>
+                    <td>
+
+                        $@String.Format("{0:0.00}", order.TotalPrice)
+
+
+                    </td>
+                    <td style="color:@(order.Status.Id == 1 ? "orange" : (order.Status.Id == 2 ? "green" : "red"))">
+
+                        @order.Status.Name
+                    </td>
+
+
+                    <td>
+
+                        <a asp-controller="order" asp-action="edit" asp-route-id="@order.Id" class="btn btn-warning btn-icon-text">
+                            <i class="mdi mdi-file-check btn-icon-append"></i>
+                            Edit
+                        </a>
+
+                           </td>
+                        </tr>
+                                }
+                        </tbody>
+                    </table>
+                    <div style="margin: 0 auto;" class="row justify-content-center mt-4">
+                        <nav aria-label="...">
+                            <ul class="pagination" style="justify-content:center">
+
+                                <li class="page-item @(ViewBag.Currentpage == 1 ? "disabled" : "")">
+                                    @if (ViewBag.Currentpage == 1)
+                                    {
+                                <a class="page-link" href="javascript:void(0)">Previous</a> }
+                            else
+                            {
+                                <a class="page-link" asp-controller="order" asp-action="index" asp-route-page="@(ViewBag.CurrentPage-1)">Previous</a>}
+                                </li>
+
+                                @for (int i = 1; i <= ViewBag.TotalPage; i++)
+                                {
+                    <li class="page-item  @(ViewBag.CurrentPage == i ? "active" : "")" style="pointer-events: @(ViewBag.CurrentPage == i ? "none" : "")"><a class="page-link" asp-controller="order" asp-action="index" asp-route-page="@i">@i</a></li>
+                                }
+
+                                <li class="page-item @(ViewBag.CurrentPage == ViewBag.TotalPage ? "disabled" : "")">
+                                    <a class="page-link" asp-controller="order" asp-action="index" asp-route-page="@(ViewBag.CurrentPage +1)">Next</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

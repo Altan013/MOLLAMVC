@@ -1,0 +1,284 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Migrations\20220621114932_CreateFirstTables.cs" />
+    <Compile Remove="Migrations\20220621114932_CreateFirstTables.Designer.cs" />
+    <Compile Remove="Migrations\20220621115453_DBDDBD.cs" />
+    <Compile Remove="Migrations\20220621115453_DBDDBD.Designer.cs" />
+    <Compile Remove="Migrations\20220621120007_SecondAttemp.cs" />
+    <Compile Remove="Migrations\20220621120007_SecondAttemp.Designer.cs" />
+    <Compile Remove="Migrations\20220621121133_test.cs" />
+    <Compile Remove="Migrations\20220621121133_test.Designer.cs" />
+    <Compile Remove="Migrations\20220623130530_Login.cs" />
+    <Compile Remove="Migrations\20220623130530_Login.Designer.cs" />
+    <Compile Remove="Migrations\20220625114447_update-database.cs" />
+    <Compile Remove="Migrations\20220625114447_update-database.Designer.cs" />
+    <Compile Remove="Migrations\20220630120233_check.cs" />
+    <Compile Remove="Migrations\20220630120233_check.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MailKit" Version="3.3.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="3.1.26" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.26" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.26" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.26">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.PowerBI.Api" Version="4.6.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.5" />
+    <PackageReference Include="NETCore.MailKit" Version="2.1.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Views\About\Index.cshtml" />
+    <None Include="Views\Account\Edit.cshtml" />
+    <None Include="Views\Account\ForgotPassword.cshtml" />
+    <None Include="Views\Account\Login.cshtml" />
+    <None Include="Views\Account\Register.cshtml" />
+    <None Include="Views\Account\ResetPassword.cshtml" />
+    <None Include="Views\Blog\Details.cshtml" />
+    <None Include="Views\Blog\Index.cshtml" />
+    <None Include="Views\Contact\Index.cshtml" />
+    <None Include="Views\Home\Index.cshtml" />
+    <None Include="Views\Home\Privacy.cshtml" />
+    <None Include="Views\Man\Details.cshtml" />
+    <None Include="Views\Man\Index.cshtml" />
+    <None Include="Views\Man\Shop.cshtml" />
+    <None Include="Views\Order\Cart.cshtml" />
+    <None Include="Views\Order\Checkout.cshtml" />
+    <None Include="Views\Shared\Error.cshtml" />
+    <None Include="Views\Shared\NotFound.cshtml" />
+    <None Include="Views\Shared\_basketProductPartialView.cshtml" />
+    <None Include="Views\Shared\_blogCommentPartial.cshtml" />
+    <None Include="Views\Shared\_cartPartialView.cshtml" />
+    <None Include="Views\Shared\_commentPartialView.cshtml" />
+    <None Include="Views\Shared\_Layout.cshtml" />
+    <None Include="Views\Shared\_pendingPartial.cshtml" />
+    <None Include="Views\Shared\_productDetailPartialView.cshtml" />
+    <None Include="Views\Shared\_productPartialView.cshtml" />
+    <None Include="Views\Shared\_searchPartialView.cshtml" />
+    <None Include="Views\Shared\_testingPartialView.cshtml" />
+    <None Include="Views\Shared\_ValidationScriptsPartial.cshtml" />
+    <None Include="Views\Shared\_wishPartialView.cshtml" />
+    <None Include="Views\Wishlist\EmptyWIsh.cshtml" />
+    <None Include="Views\Wishlist\Index.cshtml" />
+    <None Include="Views\Woman\Details.cshtml" />
+    <None Include="Views\Woman\Index.cshtml" />
+    <None Include="Views\Woman\Shop.cshtml" />
+    <None Include="Views\_ViewImports.cshtml" />
+    <None Include="Views\_ViewStart.cshtml" />
+    <None Include="wwwroot\admin\asset\fonts\fontawesome-webfont.svg" />
+    <None Include="wwwroot\admin\asset\fonts\fontawesome-webfont.woff2" />
+    <None Include="wwwroot\admin\asset\fonts\glyphicons-halflings-regular.svg" />
+    <None Include="wwwroot\admin\asset\fonts\glyphicons-halflings-regular.woff2" />
+    <None Include="wwwroot\admin\asset\fonts\Simple-Line-Icons.svg" />
+    <None Include="wwwroot\admin\asset\fonts\Simple-Line-Icons.woff2" />
+    <None Include="wwwroot\admin\asset\img\bg.svg" />
+    <None Include="wwwroot\admin\asset\img\bigplay.svg" />
+    <None Include="wwwroot\admin\asset\img\controls.svg" />
+    <None Include="wwwroot\admin\asset\js\bootstrap.min.js" />
+    <None Include="wwwroot\admin\asset\js\jquery.min.js" />
+    <None Include="wwwroot\admin\asset\js\jquery.ui.min.js" />
+    <None Include="wwwroot\admin\asset\js\main.js" />
+    <None Include="wwwroot\admin\asset\js\plugins\bootstrap-material-datetimepicker.js" />
+    <None Include="wwwroot\admin\asset\js\plugins\chart.min.js" />
+    <None Include="wwwroot\admin\asset\js\plugins\clipboard.js" />
+    <None Include="wwwroot\admin\asset\js\plugins\codemirror.js" />
+    <None Include="wwwroot\admin\asset\js\plugins\datatables.bootstrap.min.js" />
+    <None Include="wwwroot\admin\asset\js\plugins\dropzone.js" />
+    <None Include="wwwroot\admin\asset\js\plugins\flashmediaelement.swf" />
+    <None Include="wwwroot\admin\asset\js\plugins\flot\examples\.DS_Store" />
+    <None Include="wwwroot\admin\asset\js\plugins\flot\examples\axes-time-zones\date.js" />
+    <None Include="wwwroot\admin\asset\js\plugins\flot\examples\axes-time-zones\tz\africa" />
+    <None Include="wwwroot\admin\asset\js\plugins\flot\examples\axes-time-zones\tz\antarctica" />
+    <None Include="wwwroot\admin\asset\js\plugins\flot\examples\axes-time-zones\tz\asia" />
+    <None Include="wwwroot\admin\asset\js\plugins\flot\examples\axes-time-zones\tz\australasia" />
+    <None Include="wwwroot\admin\asset\js\plugins\flot\examples\axes-time-zones\tz\backward" />
+    <None Include="wwwroot\admin\asset\js\plugins\flot\examples\axes-time-zones\tz\etcetera" />
+    <None Include="wwwroot\admin\asset\js\plugins\flot\examples\axes-time-zones\tz\europe" />
+    <None Include="wwwroot\admin\asset\js\plugins\flot\examples\axes-time-zones\tz\factory" />
+    <None Include="wwwroot\admin\asset\js\plugins\flot\examples\axes-time-zones\tz\iso3166.tab" />
+    <None Include="wwwroot\admin\asset\js\plugins\flot\examples\axes-time-zones\tz\leapseconds" />
+    <None Include="wwwroot\admin\asset\js\plugins\flot\examples\axes-time-zones\tz\northamerica" />
+    <None Include="wwwroot\admin\asset\js\plugins\flot\examples\axes-time-zones\tz\pacificnew" />
+    <None Include="wwwroot\admin\asset\js\plugins\flot\examples\axes-time-zones\tz\solar87" />
+    <None Include="wwwroot\admin\asset\js\plugins\flot\examples\axes-time-zones\tz\solar88" />
+    <None Include="wwwroot\admin\asset\js\plugins\flot\examples\axes-time-zones\tz\solar89" />
+    <None Include="wwwroot\admin\asset\js\plugins\flot\examples\axes-time-zones\tz\southamerica" />
+    <None Include="wwwroot\admin\asset\js\plugins\flot\examples\axes-time-zones\tz\systemv" />
+    <None Include="wwwroot\admin\asset\js\plugins\flot\examples\axes-time-zones\tz\yearistype.sh" />
+    <None Include="wwwroot\admin\asset\js\plugins\flot\examples\axes-time-zones\tz\zone.tab" />
+    <None Include="wwwroot\admin\asset\js\plugins\flot\examples\shared\jquery-ui\jquery-ui.min.js" />
+    <None Include="wwwroot\admin\asset\js\plugins\flot\excanvas.js" />
+    <None Include="wwwroot\admin\asset\js\plugins\flot\excanvas.min.js" />
+    <None Include="wwwroot\admin\asset\js\plugins\flot\jquery.colorhelpers.js" />
+    <None Include="wwwroot\admin\asset\js\plugins\flot\jquery.colorhelpers.min.js" />
+    <None Include="wwwroot\admin\asset\js\plugins\flot\jquery.flot.canvas.js" />
+    <None Include="wwwroot\admin\asset\js\plugins\flot\jquery.flot.canvas.min.js" />
+    <None Include="wwwroot\admin\asset\js\plugins\flot\jquery.flot.categories.js" />
+    <None Include="wwwroot\admin\asset\js\plugins\flot\jquery.flot.categories.min.js" />
+    <None Include="wwwroot\admin\asset\js\plugins\flot\jquery.flot.crosshair.js" />
+    <None Include="wwwroot\admin\asset\js\plugins\flot\jquery.flot.crosshair.min.js" />
+    <None Include="wwwroot\admin\asset\js\plugins\flot\jquery.flot.errorbars.js" />
+    <None Include="wwwroot\admin\asset\js\plugins\flot\jquery.flot.errorbars.min.js" />
+    <None Include="wwwroot\admin\asset\js\plugins\flot\jquery.flot.fillbetween.js" />
+    <None Include="wwwroot\admin\asset\js\plugins\flot\jquery.flot.fillbetween.min.js" />
+    <None Include="wwwroot\admin\asset\js\plugins\flot\jquery.flot.image.js" />
+    <None Include="wwwroot\admin\asset\js\plugins\flot\jquery.flot.image.min.js" />
+    <None Include="wwwroot\admin\asset\js\plugins\flot\jquery.flot.js" />
+    <None Include="wwwroot\admin\asset\js\plugins\flot\jquery.flot.min.js" />
+    <None Include="wwwroot\admin\asset\js\plugins\flot\jquery.flot.navigate.js" />
+    <None Include="wwwroot\admin\asset\js\plugins\flot\jquery.flot.navigate.min.js" />
+    <None Include="wwwroot\admin\asset\js\plugins\flot\jquery.flot.pie.js" />
+    <None Include="wwwroot\admin\asset\js\plugins\flot\jquery.flot.pie.min.js" />
+    <None Include="wwwroot\admin\asset\js\plugins\flot\jquery.flot.resize.js" />
+    <None Include="wwwroot\admin\asset\js\plugins\flot\jquery.flot.resize.min.js" />
+    <None Include="wwwroot\admin\asset\js\plugins\flot\jquery.flot.selection.js" />
+    <None Include="wwwroot\admin\asset\js\plugins\flot\jquery.flot.selection.min.js" />
+    <None Include="wwwroot\admin\asset\js\plugins\flot\jquery.flot.stack.js" />
+    <None Include="wwwroot\admin\asset\js\plugins\flot\jquery.flot.stack.min.js" />
+    <None Include="wwwroot\admin\asset\js\plugins\flot\jquery.flot.symbol.js" />
+    <None Include="wwwroot\admin\asset\js\plugins\flot\jquery.flot.symbol.min.js" />
+    <None Include="wwwroot\admin\asset\js\plugins\flot\jquery.flot.threshold.js" />
+    <None Include="wwwroot\admin\asset\js\plugins\flot\jquery.flot.threshold.min.js" />
+    <None Include="wwwroot\admin\asset\js\plugins\flot\jquery.flot.time.js" />
+    <None Include="wwwroot\admin\asset\js\plugins\flot\jquery.flot.time.min.js" />
+    <None Include="wwwroot\admin\asset\js\plugins\flot\jquery.js" />
+    <None Include="wwwroot\admin\asset\js\plugins\flot\jquery.min.js" />
+    <None Include="wwwroot\admin\asset\js\plugins\fullcalendar.min.js" />
+    <None Include="wwwroot\admin\asset\js\plugins\handsontable.full.min.js" />
+    <None Include="wwwroot\admin\asset\js\plugins\holder.min.js" />
+    <None Include="wwwroot\admin\asset\js\plugins\html5shiv.js" />
+    <None Include="wwwroot\admin\asset\js\plugins\icheck.min.js" />
+    <None Include="wwwroot\admin\asset\js\plugins\ie9.js" />
+    <None Include="wwwroot\admin\asset\js\plugins\imagesloaded.pkgd.min.js" />
+    <None Include="wwwroot\admin\asset\js\plugins\ion.rangeSlider.min.js" />
+    <None Include="wwwroot\admin\asset\js\plugins\jquery.datatables.min.js" />
+    <None Include="wwwroot\admin\asset\js\plugins\jquery.flot.min.js" />
+    <None Include="wwwroot\admin\asset\js\plugins\jquery.knob.js" />
+    <None Include="wwwroot\admin\asset\js\plugins\jquery.mask.min.js" />
+    <None Include="wwwroot\admin\asset\js\plugins\jquery.mobile-1.4.5.min.js" />
+    <None Include="wwwroot\admin\asset\js\plugins\jquery.nicescroll.js" />
+    <None Include="wwwroot\admin\asset\js\plugins\jquery.sparkline.min.js" />
+    <None Include="wwwroot\admin\asset\js\plugins\jquery.steps.min.js" />
+    <None Include="wwwroot\admin\asset\js\plugins\jquery.validate.min.js" />
+    <None Include="wwwroot\admin\asset\js\plugins\jquery.vmap.min.js" />
+    <None Include="wwwroot\admin\asset\js\plugins\jquery.vmap.sampledata.js" />
+    <None Include="wwwroot\admin\asset\js\plugins\jquery.vmap.world.js" />
+    <None Include="wwwroot\admin\asset\js\plugins\maps\continents\jquery.vmap.africa.js" />
+    <None Include="wwwroot\admin\asset\js\plugins\maps\continents\jquery.vmap.asia.js" />
+    <None Include="wwwroot\admin\asset\js\plugins\maps\continents\jquery.vmap.australia.js" />
+    <None Include="wwwroot\admin\asset\js\plugins\maps\continents\jquery.vmap.europe.js" />
+    <None Include="wwwroot\admin\asset\js\plugins\maps\continents\jquery.vmap.north-america.js" />
+    <None Include="wwwroot\admin\asset\js\plugins\maps\continents\jquery.vmap.south-america.js" />
+    <None Include="wwwroot\admin\asset\js\plugins\maps\jquery.vmap.algeria.js" />
+    <None Include="wwwroot\admin\asset\js\plugins\maps\jquery.vmap.argentina.js" />
+    <None Include="wwwroot\admin\asset\js\plugins\maps\jquery.vmap.brazil.js" />
+    <None Include="wwwroot\admin\asset\js\plugins\maps\jquery.vmap.europe.js" />
+    <None Include="wwwroot\admin\asset\js\plugins\maps\jquery.vmap.france.js" />
+    <None Include="wwwroot\admin\asset\js\plugins\maps\jquery.vmap.germany.js" />
+    <None Include="wwwroot\admin\asset\js\plugins\maps\jquery.vmap.greece.js" />
+    <None Include="wwwroot\admin\asset\js\plugins\maps\jquery.vmap.iran.js" />
+    <None Include="wwwroot\admin\asset\js\plugins\maps\jquery.vmap.iraq.js" />
+    <None Include="wwwroot\admin\asset\js\plugins\maps\jquery.vmap.russia.js" />
+    <None Include="wwwroot\admin\asset\js\plugins\maps\jquery.vmap.usa.js" />
+    <None Include="wwwroot\admin\asset\js\plugins\maps\jquery.vmap.world.js" />
+    <None Include="wwwroot\admin\asset\js\plugins\masonry.pkgd.min.js" />
+    <None Include="wwwroot\admin\asset\js\plugins\mediaelement-and-player.min.js" />
+    <None Include="wwwroot\admin\asset\js\plugins\moment.min.js" />
+    <None Include="wwwroot\admin\asset\js\plugins\morris.min.js" />
+    <None Include="wwwroot\admin\asset\js\plugins\nouislider.min.js" />
+    <None Include="wwwroot\admin\asset\js\plugins\raphael.min.js" />
+    <None Include="wwwroot\admin\asset\js\plugins\respond.min.js" />
+    <None Include="wwwroot\admin\asset\js\plugins\select2.full.min.js" />
+    <None Include="wwwroot\admin\asset\js\plugins\silverlightmediaelement.xap" />
+    <None Include="wwwroot\admin\asset\js\plugins\summernote.min.js" />
+    <None Include="wwwroot\assets\fonts\flaming\flaming-webfont.woff2" />
+    <None Include="wwwroot\assets\fonts\icon51c1.svg" />
+    <None Include="wwwroot\assets\fonts\icon51c1.woff2" />
+    <None Include="wwwroot\assets\fonts\molla0ab2.svg" />
+    <None Include="wwwroot\assets\fonts\molla0ab2.woff2" />
+    <None Include="wwwroot\assets\images\icons\safari-pinned-tab.svg" />
+    <None Include="wwwroot\assets\images\products\01335616-cd6e-474d-88d0-2bf5d023a8c45-4.webp" />
+    <None Include="wwwroot\assets\images\products\160b906e-3bf6-47f7-9eaa-dc14682f45873-4.webp" />
+    <None Include="wwwroot\assets\images\products\22098581-7a4e-4430-a5e2-d2a602499585new.webp" />
+    <None Include="wwwroot\assets\images\products\26b9aa8d-e83f-4091-9940-a7e9c720c2a55-4.webp" />
+    <None Include="wwwroot\assets\images\products\2734bf4f-8a6d-487a-89ae-7c9a6f35ed745-1.webp" />
+    <None Include="wwwroot\assets\images\products\2827edb9-8847-4674-9e87-8631ff145296nikeLogo.webp" />
+    <None Include="wwwroot\assets\images\products\2cd031f2-670c-48c3-bd59-6ca5eab44089jr1-1.webp" />
+    <None Include="wwwroot\assets\images\products\300a755e-94cc-4238-8360-e695c860a9f5jr2-3.webp" />
+    <None Include="wwwroot\assets\images\products\33c7b562-f46d-429b-bedf-8f86cfd731c7jr1-2.webp" />
+    <None Include="wwwroot\assets\images\products\37e0466f-9242-43b6-9b31-d08a91727b3e4-3.webp" />
+    <None Include="wwwroot\assets\images\products\4233904a-ea05-423f-bc58-14d4b78b7029jr-2-4.webp" />
+    <None Include="wwwroot\assets\images\products\48b7c0b2-9b62-4eb5-b9b2-ed23acd8f6494-1.webp" />
+    <None Include="wwwroot\assets\images\products\4a9d0365-9a99-4952-aec1-82d48e4ff7c15-1.webp" />
+    <None Include="wwwroot\assets\images\products\4e9a521c-57ad-4470-8123-4a5d4c117d141-2.webp" />
+    <None Include="wwwroot\assets\images\products\53121858-0118-4bb8-88ee-8910586420802-4.webp" />
+    <None Include="wwwroot\assets\images\products\53888e46-6769-46b0-bbe7-8c9107016b8b5-3.webp" />
+    <None Include="wwwroot\assets\images\products\56052a52-7894-4fca-80ab-557b8f12914c3-2.webp" />
+    <None Include="wwwroot\assets\images\products\58ac142a-dc5a-4e61-b04c-ef647920ec1a3-3.webp" />
+    <None Include="wwwroot\assets\images\products\612ac1b9-37fd-4eea-8cd9-afd49837b6b13-2.webp" />
+    <None Include="wwwroot\assets\images\products\634604be-9498-44f3-ae18-a8014feab80b5-2.webp" />
+    <None Include="wwwroot\assets\images\products\69e4f49f-2690-43c8-987f-2d46b3d78c283-1.webp" />
+    <None Include="wwwroot\assets\images\products\6d1ffa02-5e13-4e85-85db-ffd740a22df94-2.webp" />
+    <None Include="wwwroot\assets\images\products\76bf207a-da75-469f-9532-fa0ad27f48f92-2.webp" />
+    <None Include="wwwroot\assets\images\products\7913ec2b-08f1-4acf-bea1-edf84bf61ea96-1.webp" />
+    <None Include="wwwroot\assets\images\products\79afe32e-d4dd-45ec-8eb1-847ed1878e562-3.webp" />
+    <None Include="wwwroot\assets\images\products\800111f4-77ae-4a62-a07f-27bd0baf4cf04-2.webp" />
+    <None Include="wwwroot\assets\images\products\87684318-feb2-45e6-b5c9-70d5c4314e7873.webp" />
+    <None Include="wwwroot\assets\images\products\89ad807e-7bc8-4e08-9d04-ee36f982abe05-2.webp" />
+    <None Include="wwwroot\assets\images\products\8b49c090-c596-4f33-a4fa-2d79558033031-4.webp" />
+    <None Include="wwwroot\assets\images\products\8d398feb-2088-4d3c-b819-de9b66da293f7-4.webp" />
+    <None Include="wwwroot\assets\images\products\8d9457ef-88ef-4355-90d7-c1221c553203jr-14.webp" />
+    <None Include="wwwroot\assets\images\products\95748e3b-1157-4b9b-b163-8bc7deff11f73-3.webp" />
+    <None Include="wwwroot\assets\images\products\957d9cf3-edee-4f1f-abeb-0de3b290ee852-4.webp" />
+    <None Include="wwwroot\assets\images\products\9df46053-640b-4576-a4d6-60383d44720a4-4.webp" />
+    <None Include="wwwroot\assets\images\products\9ec98f68-c5f5-401f-8444-4cdcb3301f9f4-1.webp" />
+    <None Include="wwwroot\assets\images\products\a510cf99-e0b1-4e48-b180-b33442fe40731-3.webp" />
+    <None Include="wwwroot\assets\images\products\a5ce612f-2b17-464b-b3e5-6c716d14bba071.webp" />
+    <None Include="wwwroot\assets\images\products\a92bcd9e-f962-48ea-9ecc-d8dea9d50e4f2-2.webp" />
+    <None Include="wwwroot\assets\images\products\aa713807-6f0f-4c60-964e-93ee02f7e5ba3-4.webp" />
+    <None Include="wwwroot\assets\images\products\ab4341bb-6502-42b7-a33c-eb04e01aa76f6-2.webp" />
+    <None Include="wwwroot\assets\images\products\ac8de9d7-cb44-4639-a2da-9a29cda47eb44-3.webp" />
+    <None Include="wwwroot\assets\images\products\c5301984-6300-4fea-bdab-88f3de2727cb5-3.webp" />
+    <None Include="wwwroot\assets\images\products\d42039dd-299c-4c1c-886f-d8429bc92723jr-2-1.webp" />
+    <None Include="wwwroot\assets\images\products\d4e2c511-998a-4cfe-9248-fce0eb449154jr2-2.webp" />
+    <None Include="wwwroot\assets\images\products\d780ca99-ccc7-4741-9d57-c5afc7d830b94-4.webp" />
+    <None Include="wwwroot\assets\images\products\ed4dd5f9-5973-44d3-8205-9588146fecc5jr1-3.webp" />
+    <None Include="wwwroot\assets\images\products\eeb31df8-a86e-48f1-809b-5c19c28b21fa3-1.webp" />
+    <None Include="wwwroot\assets\images\products\fecdf300-a8ba-4f82-8b6e-bd68404db1a52-3.webp" />
+    <None Include="wwwroot\assets\images\slider\5b3ee311-1133-4eac-8a6f-8dda025add5dbenettonslider.webp" />
+    <None Include="wwwroot\assets\js\bootstrap-input-spinner.js" />
+    <None Include="wwwroot\assets\js\bootstrap.bundle.min.js" />
+    <None Include="wwwroot\assets\js\image-zoom.js" />
+    <None Include="wwwroot\assets\js\jquery.countdown.min.js" />
+    <None Include="wwwroot\assets\js\jquery.elevateZoom.min.js" />
+    <None Include="wwwroot\assets\js\jquery.hoverIntent.min.js" />
+    <None Include="wwwroot\assets\js\jquery.min.js" />
+    <None Include="wwwroot\assets\js\jquery.plugin.min.js" />
+    <None Include="wwwroot\assets\js\jquery.waypoints.min.js" />
+    <None Include="wwwroot\assets\js\main.js" />
+    <None Include="wwwroot\assets\js\nouislider.min.js" />
+    <None Include="wwwroot\assets\js\owl.carousel.min.js" />
+    <None Include="wwwroot\assets\js\wNumb.js" />
+    <None Include="wwwroot\assets\vendor\line-awesome\line-awesome\line-awesome\fonts\line-awesomeeb4f.svg" />
+    <None Include="wwwroot\assets\vendor\line-awesome\line-awesome\line-awesome\fonts\line-awesomeeb4f.woff2" />
+    <None Include="wwwroot\lib\isotope\jquery.isotope.min.js" />
+    <None Include="wwwroot\lib\jquery.appear\jquery.appear.min.js" />
+    <None Include="wwwroot\lib\jquery.lazyload\jquery.lazyload.min.js" />
+    <None Include="wwwroot\lib\jquery\jquery.min.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Areas\Manage\Data\" />
+    <Folder Include="Areas\Manage\Models\" />
+    <Folder Include="wwwroot\assets\images\team\" />
+  </ItemGroup>
+
+</Project>
