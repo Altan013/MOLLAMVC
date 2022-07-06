@@ -15,6 +15,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
 
+
 namespace FinalBack.Controllers
 {
     public class AccountController : Controller
@@ -23,18 +24,27 @@ namespace FinalBack.Controllers
         private readonly SignInManager<AppUser> _signInManager;
         private readonly RoleManager<IdentityRole> _roleManager;
         private readonly AppDbContext _context;
+        private readonly IHttpContextAccessor _httpContextAccessor;
 
-        public AccountController(UserManager<AppUser> userManager, SignInManager<AppUser> signInManager, RoleManager<IdentityRole> roleManager, AppDbContext context)
+
+        public AccountController(UserManager<AppUser> userManager, SignInManager<AppUser> signInManager, RoleManager<IdentityRole> roleManager, AppDbContext context, IHttpContextAccessor httpContextAccessor)
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _roleManager = roleManager;
             _context = context;
-
+            _httpContextAccessor = httpContextAccessor;
         }
         public IActionResult Register()
         {
             return View();
+        }
+
+        public IActionResult Test()
+        {
+            string host = _httpContextAccessor.HttpContext.Request.Host.Value;
+
+            return Ok(host);
         }
 
         [HttpPost]

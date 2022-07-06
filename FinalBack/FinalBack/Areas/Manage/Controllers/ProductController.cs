@@ -4,6 +4,7 @@ using FinalBack.Models;
 using FinalBack.ViewModels;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -22,9 +23,11 @@ namespace FinalBack.Controllers
     {
         private readonly AppDbContext context;
         private readonly IWebHostEnvironment env;
+        private readonly IHttpContextAccessor _httpContextAccessor;
 
-        public ProductController(AppDbContext context, IWebHostEnvironment env)
+        public ProductController(AppDbContext context, IWebHostEnvironment env, IHttpContextAccessor httpContextAccessor)
         {
+            _httpContextAccessor = httpContextAccessor;
             this.context = context;
             this.env = env;
         }
@@ -183,8 +186,10 @@ namespace FinalBack.Controllers
             context.Products.Add(prodVM.Product);
             context.SaveChanges();
 
+            string host = _httpContextAccessor.HttpContext.Request.Host.Value;
 
-            string prodlink = $"https://localhost:44388/{prodVM.Product.Gender.Name}/Details/" + $"{productSizeColor.Id}";
+
+            string prodlink = $"{host}/{prodVM.Product.Gender.Name}/Details/" + $"{productSizeColor.Id}";
             MailMessage mail = new MailMessage();
 
 
@@ -199,6 +204,7 @@ namespace FinalBack.Controllers
             }
 
             body = body.Replace("{link}", prodlink);
+            body = body.Replace("{ productImage }", $"{host}/assets/images/products/{productSizeColor.MainImage}");
 
 
             mail.From = new MailAddress("mollamvc1@gmail.com", "Molla");

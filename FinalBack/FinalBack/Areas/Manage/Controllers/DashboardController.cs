@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace FinalBack.Areas.Manage.Controllers
 {
     [Area("manage")]
-    [Authorize(Roles = "SuperAdmin,Admin")]
+    [Authorize(Roles = "SuperAdmin,Admin,Member")]
     public class DashboardController : Controller
     {
         public IActionResult Index()

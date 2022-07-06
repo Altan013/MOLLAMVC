@@ -20,6 +20,7 @@ namespace FinalBack.Areas.Manage.Controllers
         private readonly SignInManager<AppUser> _signInResult;
         private readonly AppDbContext _context;
 
+
         public AccountController(UserManager<AppUser> userManager, RoleManager<IdentityRole> roleManager, SignInManager<AppUser> signInResult, AppDbContext context)
         {
             _context = context;
@@ -123,7 +124,7 @@ namespace FinalBack.Areas.Manage.Controllers
         }
 
 
-        public IActionResult Testuser()
+        public IActionResult TestUser()
         {
             if (!User.Identity.IsAuthenticated)
             {
